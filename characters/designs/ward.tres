@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Dr. Elena Ward"
+head_radius = 47.000
+torso_len = 110.000
+shoulder_half = 40.000
+hip_half = 34.000
+skin = Color(0.820, 0.620, 0.500, 1)
+skin_shade = Color(0.681, 0.484, 0.380, 1)
+hair = Color(0.550, 0.360, 0.200, 1)
+brow = Color(0.450, 0.300, 0.180, 1)
+top = Color(0.930, 0.930, 0.900, 1)
+top_shade = Color(0.780, 0.790, 0.780, 1)
+top_accent = Color(0.400, 0.600, 0.750, 1)
+inner = Color(0.350, 0.550, 0.700, 1)
+sleeve = Color(0.930, 0.930, 0.900, 1)
+pants = Color(0.250, 0.300, 0.400, 1)
+shoes = Color(0.200, 0.200, 0.220, 1)
+hem_drop = 70.000
+hem_flare = 8.000
+hair_style = 2
+top_style = 0
+walk_speed = 220.000
+run_speed = 430.000

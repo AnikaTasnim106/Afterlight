@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Dr. Isaac Chen"
+head_radius = 48.000
+skin = Color(0.900, 0.740, 0.580, 1)
+skin_shade = Color(0.747, 0.577, 0.441, 1)
+hair = Color(0.080, 0.080, 0.100, 1)
+brow = Color(0.080, 0.080, 0.100, 1)
+top = Color(0.930, 0.930, 0.900, 1)
+top_shade = Color(0.780, 0.790, 0.780, 1)
+sleeve = Color(0.930, 0.930, 0.900, 1)
+hem_drop = 70.000
+hem_flare = 8.000
+top_style = 0
+top_accent = Color(0.400, 0.600, 0.750, 1)
+inner = Color(0.300, 0.400, 0.550, 1)
+pants = Color(0.200, 0.200, 0.240, 1)
+shoes = Color(0.150, 0.120, 0.100, 1)
+hair_style = 4
+glasses = true

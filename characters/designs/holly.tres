@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Nurse Holly"
+head_radius = 46.000
+torso_len = 104.000
+shoulder_half = 38.000
+hip_half = 34.000
+skin = Color(0.680, 0.470, 0.350, 1)
+skin_shade = Color(0.564, 0.367, 0.266, 1)
+hair = Color(0.200, 0.120, 0.080, 1)
+brow = Color(0.200, 0.120, 0.080, 1)
+top = Color(0.350, 0.600, 0.620, 1)
+top_shade = Color(0.270, 0.480, 0.500, 1)
+top_accent = Color(0.950, 0.950, 0.950, 1)
+sleeve = Color(0.350, 0.600, 0.620, 1)
+pants = Color(0.350, 0.600, 0.620, 1)
+shoes = Color(0.950, 0.950, 0.950, 1)
+hair_style = 2
+top_style = 3

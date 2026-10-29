@@ -1,0 +1,767 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://levels/level1/building.gd" id="1"]
+[ext_resource type="Script" path="res://props/room_shell.gd" id="2"]
+[ext_resource type="Script" path="res://props/shaft_bg.gd" id="3"]
+[ext_resource type="Script" path="res://props/stair_flight.gd" id="4"]
+[ext_resource type="Script" path="res://props/vector_prop.gd" id="5"]
+[ext_resource type="Script" path="res://props/walk_floor.gd" id="6"]
+[ext_resource type="Script" path="res://props/soft_light.gd" id="7"]
+[ext_resource type="Script" path="res://props/interactable.gd" id="8"]
+[ext_resource type="PackedScene" path="res://characters/alex.tscn" id="9"]
+[ext_resource type="Script" path="res://core/camera_director.gd" id="10"]
+[ext_resource type="Script" path="res://ui/cinema_ui.gd" id="11"]
+
+[sub_resource type="Environment" id="env"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.1
+glow_bloom = 0.05
+glow_blend_mode = 1
+glow_hdr_threshold = 1.0
+
+[node name="Building" type="Node2D"]
+script = ExtResource("1")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.5, 0.5, 0.58, 1)
+
+[node name="Room" type="Node2D" parent="."]
+
+[node name="Corridor2" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(0, 0)
+width = 2400.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.435, 0.490, 0.541, 1)
+wall_pattern_color = Color(0.392, 0.447, 0.502, 1)
+wall_pattern = 3
+floor_color = Color(0.420, 0.392, 0.376, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Corridor3" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(0, -900)
+width = 2400.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.498, 0.545, 0.455, 1)
+wall_pattern_color = Color(0.451, 0.502, 0.416, 1)
+wall_pattern = 0
+floor_color = Color(0.420, 0.392, 0.376, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Corridor4" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(0, -1800)
+width = 2400.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.627, 0.561, 0.490, 1)
+wall_pattern_color = Color(0.580, 0.510, 0.435, 1)
+wall_pattern = 3
+floor_color = Color(0.420, 0.392, 0.376, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Shaft" type="Node2D" parent="Room"]
+script = ExtResource("3")
+position = Vector2(2400, 0)
+width = 1300.0
+floors = PackedInt32Array(2, 3, 4)
+floor_y = PackedFloat32Array(0, -900, -1800)
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Stairs" type="Node2D" parent="."]
+
+[node name="Flight2A" type="Node2D" parent="Stairs"]
+script = ExtResource("4")
+bottom = Vector2(2750, 0)
+top = Vector2(3300, -450)
+
+[node name="Flight2B" type="Node2D" parent="Stairs"]
+script = ExtResource("4")
+bottom = Vector2(3300, -450)
+top = Vector2(2750, -900)
+
+[node name="Flight3A" type="Node2D" parent="Stairs"]
+script = ExtResource("4")
+bottom = Vector2(2750, -900)
+top = Vector2(3300, -1350)
+
+[node name="Flight3B" type="Node2D" parent="Stairs"]
+script = ExtResource("4")
+bottom = Vector2(3300, -1350)
+top = Vector2(2750, -1800)
+
+[node name="Door2A" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(400, 0)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.420, 0.247, 0.227, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "2A"
+
+[node name="Rack20" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(570, 18)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door2B" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(900, 0)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.420, 0.247, 0.227, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "2B"
+
+[node name="Rack21" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1070, 18)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door2C" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1400, 0)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.420, 0.247, 0.227, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "2C"
+
+[node name="Rack22" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1570, 18)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door2D" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1900, 0)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.420, 0.247, 0.227, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "2D_open"
+
+[node name="Rack23" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2070, 18)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Sign2" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2240, -450)
+kind = "floor_sign"
+size = Vector2(0, 0)
+main_color = Color(0.114, 0.110, 0.125, 1)
+accent_color = Color(0.914, 0.651, 0.251, 1)
+seed_value = 1
+label = "2"
+
+[node name="CL20" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(350, -790)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="CL21" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1100, -790)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="CL22" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1850, -790)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door3A" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(500, -900)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.247, 0.322, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "3A"
+
+[node name="Rack30" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(670, -882)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door3B" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1000, -900)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.247, 0.322, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "3B_open"
+
+[node name="Rack31" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1170, -882)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door3C" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1500, -900)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.247, 0.322, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "3C"
+
+[node name="Rack32" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1670, -882)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door3D" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2000, -900)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.247, 0.322, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "3D"
+
+[node name="Rack33" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2170, -882)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Sign3" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2240, -1350)
+kind = "floor_sign"
+size = Vector2(0, 0)
+main_color = Color(0.114, 0.110, 0.125, 1)
+accent_color = Color(0.914, 0.651, 0.251, 1)
+seed_value = 1
+label = "3"
+
+[node name="CL30" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(350, -1690)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="CL31" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1100, -1690)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 3
+
+[node name="CL32" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1850, -1690)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door4A" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(500, -1800)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.353, 0.239, 0.169, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "4A_open"
+
+[node name="Rack40" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(670, -1782)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door4B" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1000, -1800)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.353, 0.239, 0.169, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "4B"
+
+[node name="Rack41" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1170, -1782)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door4C" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1500, -1800)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.353, 0.239, 0.169, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "4C_open"
+
+[node name="Rack42" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1670, -1782)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door4D" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2000, -1800)
+kind = "front_door"
+size = Vector2(170, 500)
+main_color = Color(0.353, 0.239, 0.169, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "4D"
+
+[node name="Rack43" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2170, -1782)
+kind = "shoe_rack"
+size = Vector2(110, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Sign4" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2240, -2250)
+kind = "floor_sign"
+size = Vector2(0, 0)
+main_color = Color(0.114, 0.110, 0.125, 1)
+accent_color = Color(0.914, 0.651, 0.251, 1)
+seed_value = 1
+label = "4"
+
+[node name="CL40" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(350, -2590)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="CL41" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1100, -2590)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="CL42" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1850, -2590)
+kind = "ceiling_light"
+size = Vector2(150, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Plant4" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(130, -1770)
+kind = "plant"
+size = Vector2(0, 220)
+main_color = Color(0.788, 0.439, 0.290, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 4
+
+[node name="Notice4" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1250, -2270)
+kind = "notice_board"
+size = Vector2(240, 170)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "WATER 6–8 PM"
+
+[node name="Bike3" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(780, -880)
+kind = "bicycle"
+size = Vector2(0, 0)
+main_color = Color(0.169, 0.702, 0.655, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Trash3" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1760, -880)
+kind = "trash_bags"
+size = Vector2(0, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Window3" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(160, -1230)
+kind = "small_window"
+size = Vector2(200, 240)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Suitcase3" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1060, -888)
+kind = "bag"
+size = Vector2(0, 0)
+main_color = Color(0.420, 0.306, 0.341, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Lift2" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(2180, 0)
+kind = "elevator"
+size = Vector2(220, 520)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Ext2" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(1150, -60)
+kind = "extinguisher"
+size = Vector2(0, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Plant2" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(90, 30)
+kind = "plant"
+size = Vector2(0, 200)
+main_color = Color(0.914, 0.875, 0.812, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 2
+
+[node name="Shawl" type="Node2D" parent="Props"]
+script = ExtResource("5")
+position = Vector2(600, -1794)
+kind = "bag"
+size = Vector2(0, 0)
+main_color = Color(0.898, 0.863, 0.784, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+visible = false
+
+[node name="Walk" type="Node2D" parent="."]
+
+[node name="Floor2" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(0, 0)
+width = 2750.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid2" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -450)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Floor3" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(0, -900)
+width = 2750.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid3" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -1350)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Floor4" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(0, -1800)
+width = 2750.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="L20" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(350, -640)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="L21" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(1100, -640)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="L22" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(1850, -640)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="LS2" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(3005, -640)
+color = Color(1.0, 0.92, 0.75, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="L30" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(350, -1540)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="L31" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(1100, -1540)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.5
+
+[node name="L32" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(1850, -1540)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="LS3" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(3005, -1540)
+color = Color(1.0, 0.92, 0.75, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="L40" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(350, -2440)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="L41" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(1100, -2440)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="L42" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(1850, -2440)
+color = Color(1.0, 0.95, 0.82, 1)
+radius = 720.0
+base_energy = 0.75
+flicker = 0.0
+
+[node name="LS4" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(3005, -2440)
+color = Color(1.0, 0.92, 0.75, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="chowdhury" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(0, 0)
+id = "chowdhury"
+prompt = "Talk to Mrs. Carter"
+prompt_offset = Vector2(0, -560)
+reach = 160.0
+
+[node name="rafi" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(0, 0)
+id = "rafi"
+prompt = "Talk to Ryan"
+prompt_offset = Vector2(0, -560)
+reach = 160.0
+
+[node name="nadia" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(0, 0)
+id = "nadia"
+prompt = "Talk to Nina"
+prompt_offset = Vector2(0, -560)
+reach = 160.0
+
+[node name="das" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(0, 0)
+id = "das"
+prompt = "Help Mr. Daniels"
+prompt_offset = Vector2(0, -560)
+reach = 160.0
+
+[node name="door_3b" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(1000, -900)
+id = "door_3b"
+prompt = "Listen at 3B"
+prompt_offset = Vector2(0, -560)
+reach = 100.0
+
+[node name="notice" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(1250, -1800)
+id = "notice"
+prompt = "Read the notice"
+prompt_offset = Vector2(0, -680)
+reach = 90.0
+
+[node name="elevator" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(2180, 0)
+id = "elevator"
+prompt = "Call the lift"
+prompt_offset = Vector2(0, -600)
+reach = 100.0
+
+[node name="door_2b" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(900, 0)
+id = "door_2b"
+prompt = "Take Mr. Daniels inside (2B)"
+prompt_offset = Vector2(0, -600)
+reach = 140.0
+
+[node name="shawl" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(600, -1800)
+id = "shawl"
+prompt = "Look"
+prompt_offset = Vector2(0, -300)
+reach = 90.0
+
+[node name="door_4c" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(1500, -1800)
+id = "door_4c"
+prompt = "Apartment 4C"
+prompt_offset = Vector2(0, -600)
+reach = 130.0
+
+[node name="Actors" type="Node2D" parent="."]
+
+[node name="Alex" parent="Actors" instance=ExtResource("9")]
+position = Vector2(1520, -1802)
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("10")
+position = Vector2(1520, -2200)
+limit_left = -40
+limit_right = 3740
+limit_top = -2700
+limit_bottom = 200
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="CinemaUI" type="CanvasLayer" parent="."]
+script = ExtResource("11")

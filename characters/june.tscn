@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://characters/actor.gd" id="1"]
+[ext_resource type="Script" path="res://characters/character_rig.gd" id="2"]
+[ext_resource type="Resource" path="res://characters/designs/june.tres" id="3"]
+
+[sub_resource type="CapsuleShape2D" id="cap"]
+radius = 30.0
+height = 380.0
+
+[node name="June" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1")
+player_controlled = false
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -190)
+shape = SubResource("cap")
+
+[node name="Rig" type="Node2D" parent="."]
+script = ExtResource("2")
+design = ExtResource("3")

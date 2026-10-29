@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Alex"
+head_radius = 50.0
+torso_len = 120.0
+shoulder_half = 46.0
+hip_half = 36.0
+thigh = 106.0
+shin = 100.0
+upper_arm = 82.0
+forearm = 76.0
+hem_drop = 22.0
+skin = Color(0.79, 0.56, 0.42, 1)
+skin_shade = Color(0.66, 0.43, 0.31, 1)
+hair = Color(0.11, 0.094, 0.125, 1)
+top = Color(0.18, 0.224, 0.28, 1)
+top_shade = Color(0.13, 0.165, 0.21, 1)
+top_accent = Color(0.88, 0.6, 0.23, 1)
+inner = Color(0.37, 0.54, 0.545, 1)
+sleeve = Color(0.18, 0.224, 0.28, 1)
+pants = Color(0.165, 0.185, 0.23, 1)
+shoes = Color(0.31, 0.21, 0.15, 1)
+shoe_accent = Color(0.16, 0.13, 0.11, 1)
+brow = Color(0.11, 0.094, 0.125, 1)
+hair_style = 0
+top_style = 0
+brow_width = 1.15
+stubble = false
+holster = true
+bounce = 1.0
+walk_speed = 230.0
+run_speed = 480.0

@@ -1,0 +1,37 @@
+; AFTERLIGHT — Godot 4.5 project
+config_version=5
+
+[application]
+
+config/name="AFTERLIGHT"
+config/description="Cinematic 2D zombie survival — Level 1 Scene 1 playable"
+run/main_scene="res://levels/menu.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+
+[autoload]
+
+Inputs="*res://core/inputs.gd"
+Game="*res://core/game_state.gd"
+Sound="*res://core/noise.gd"
+Pause="*res://core/pause_menu.gd"
+Audio="*res://core/audio.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[editor]
+
+movie_writer/mjpeg_quality=0.9
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0.03, 0.03, 0.05, 1)

@@ -1,0 +1,473 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://levels/level1/stairwell.gd" id="1"]
+[ext_resource type="Script" path="res://props/room_shell.gd" id="2"]
+[ext_resource type="Script" path="res://props/shaft_bg.gd" id="3"]
+[ext_resource type="Script" path="res://props/vector_prop.gd" id="4"]
+[ext_resource type="Script" path="res://props/stair_flight.gd" id="5"]
+[ext_resource type="Script" path="res://props/walk_floor.gd" id="6"]
+[ext_resource type="Script" path="res://props/soft_light.gd" id="7"]
+[ext_resource type="Script" path="res://props/interactable.gd" id="8"]
+[ext_resource type="PackedScene" path="res://characters/alex.tscn" id="9"]
+[ext_resource type="Script" path="res://core/camera_director.gd" id="10"]
+[ext_resource type="Script" path="res://ui/cinema_ui.gd" id="11"]
+
+[sub_resource type="Environment" id="env"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.1
+glow_bloom = 0.05
+glow_blend_mode = 1
+glow_hdr_threshold = 1.0
+
+[node name="Stairwell" type="Node2D"]
+script = ExtResource("1")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.42, 0.42, 0.5, 1)
+
+[node name="Room" type="Node2D" parent="."]
+
+[node name="Stub2" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(1500, 0)
+width = 800.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.310, 0.302, 0.314, 1)
+wall_pattern_color = Color(0.278, 0.271, 0.290, 1)
+wall_pattern = 3
+floor_color = Color(0.290, 0.267, 0.259, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Stub3" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(1500, -900)
+width = 800.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.310, 0.302, 0.314, 1)
+wall_pattern_color = Color(0.278, 0.271, 0.290, 1)
+wall_pattern = 3
+floor_color = Color(0.290, 0.267, 0.259, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Stub4" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(1500, -1800)
+width = 800.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.310, 0.302, 0.314, 1)
+wall_pattern_color = Color(0.278, 0.271, 0.290, 1)
+wall_pattern = 3
+floor_color = Color(0.290, 0.267, 0.259, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Stub5" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(1500, -2700)
+width = 800.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.310, 0.302, 0.314, 1)
+wall_pattern_color = Color(0.278, 0.271, 0.290, 1)
+wall_pattern = 3
+floor_color = Color(0.290, 0.267, 0.259, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Stub6" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(1500, -3600)
+width = 800.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.310, 0.302, 0.314, 1)
+wall_pattern_color = Color(0.278, 0.271, 0.290, 1)
+wall_pattern = 3
+floor_color = Color(0.290, 0.267, 0.259, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Stub7" type="Node2D" parent="Room"]
+script = ExtResource("2")
+position = Vector2(1500, -4500)
+width = 800.0
+wall_height = 800.0
+floor_depth = 100.0
+wall_color = Color(0.310, 0.302, 0.314, 1)
+wall_pattern_color = Color(0.278, 0.271, 0.290, 1)
+wall_pattern = 3
+floor_color = Color(0.290, 0.267, 0.259, 1)
+floor_type = 1
+right_cap = false
+
+[node name="Shaft" type="Node2D" parent="Room"]
+script = ExtResource("3")
+position = Vector2(2300, 0)
+width = 1400.0
+floors = PackedInt32Array(2, 3, 4, 5, 6, 7)
+floor_y = PackedFloat32Array(0, -900, -1800, -2700, -3600, -4500)
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Door2" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2390, 0)
+kind = "front_door"
+size = Vector2(150, 480)
+main_color = Color(0.365, 0.384, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door3" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2390, -900)
+kind = "front_door"
+size = Vector2(150, 480)
+main_color = Color(0.365, 0.384, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door4" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2390, -1800)
+kind = "front_door"
+size = Vector2(150, 480)
+main_color = Color(0.365, 0.384, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door5" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2390, -2700)
+kind = "front_door"
+size = Vector2(150, 480)
+main_color = Color(0.365, 0.384, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door6" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2390, -3600)
+kind = "front_door"
+size = Vector2(150, 480)
+main_color = Color(0.365, 0.384, 0.400, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Door7" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2390, -4500)
+kind = "front_door"
+size = Vector2(150, 480)
+main_color = Color(0.478, 0.184, 0.157, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+label = "ROOF"
+
+[node name="ExitSign" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(3000, -4800)
+kind = "small_window"
+size = Vector2(0, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Debris2" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2600, 10)
+kind = "debris"
+size = Vector2(0, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Bag5" type="Node2D" parent="Props"]
+script = ExtResource("4")
+position = Vector2(2560, -2692)
+kind = "bag"
+size = Vector2(0, 0)
+main_color = Color(0.310, 0.392, 0.471, 1)
+accent_color = Color(0.890, 0.627, 0.235, 1)
+seed_value = 1
+
+[node name="Stairs" type="Node2D" parent="."]
+
+[node name="Flight2A" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(2750, 0)
+top = Vector2(3300, -450)
+
+[node name="Flight2B" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(3300, -450)
+top = Vector2(2750, -900)
+
+[node name="Flight3A" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(2750, -900)
+top = Vector2(3300, -1350)
+
+[node name="Flight3B" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(3300, -1350)
+top = Vector2(2750, -1800)
+
+[node name="Flight4A" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(2750, -1800)
+top = Vector2(3300, -2250)
+
+[node name="Flight4B" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(3300, -2250)
+top = Vector2(2750, -2700)
+
+[node name="Flight5A" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(2750, -2700)
+top = Vector2(3300, -3150)
+
+[node name="Flight5B" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(3300, -3150)
+top = Vector2(2750, -3600)
+
+[node name="Flight6A" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(2750, -3600)
+top = Vector2(3300, -4050)
+
+[node name="Flight6B" type="Node2D" parent="Stairs"]
+script = ExtResource("5")
+bottom = Vector2(3300, -4050)
+top = Vector2(2750, -4500)
+
+[node name="Walk" type="Node2D" parent="."]
+
+[node name="Landing2" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(2300, 0)
+width = 450.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid2" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -450)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Landing3" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(2300, -900)
+width = 450.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid3" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -1350)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Landing4" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(2300, -1800)
+width = 450.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid4" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -2250)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Landing5" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(2300, -2700)
+width = 450.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid5" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -3150)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Landing6" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(2300, -3600)
+width = 450.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Mid6" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(3300, -4050)
+width = 320.0
+style = 2
+color = Color(0.365, 0.353, 0.349, 1)
+
+[node name="Landing7" type="Node2D" parent="Walk"]
+script = ExtResource("6")
+position = Vector2(2300, -4500)
+width = 450.0
+style = 0
+color = Color(0.290, 0.275, 0.282, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="L2" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2905, -640)
+color = Color(1.0, 0.93, 0.78, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="LD2" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2400, -300)
+color = Color(1.0, 0.85, 0.6, 1)
+radius = 420.0
+base_energy = 0.35
+flicker = 0.0
+
+[node name="L3" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2905, -1540)
+color = Color(1.0, 0.93, 0.78, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.45
+
+[node name="LD3" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2400, -1200)
+color = Color(1.0, 0.85, 0.6, 1)
+radius = 420.0
+base_energy = 0.35
+flicker = 0.0
+
+[node name="L4" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2905, -2440)
+color = Color(1.0, 0.93, 0.78, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="LD4" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2400, -2100)
+color = Color(1.0, 0.85, 0.6, 1)
+radius = 420.0
+base_energy = 0.35
+flicker = 0.0
+
+[node name="L5" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2905, -3340)
+color = Color(1.0, 0.93, 0.78, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="LD5" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2400, -3000)
+color = Color(1.0, 0.85, 0.6, 1)
+radius = 420.0
+base_energy = 0.35
+flicker = 0.0
+
+[node name="L6" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2905, -4240)
+color = Color(1.0, 0.93, 0.78, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.45
+
+[node name="LD6" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2400, -3900)
+color = Color(1.0, 0.85, 0.6, 1)
+radius = 420.0
+base_energy = 0.35
+flicker = 0.0
+
+[node name="L7" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2905, -5140)
+color = Color(1.0, 0.93, 0.78, 1)
+radius = 900.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="LD7" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2400, -4800)
+color = Color(1.0, 0.85, 0.6, 1)
+radius = 420.0
+base_energy = 0.35
+flicker = 0.0
+
+[node name="RoofGlow" type="PointLight2D" parent="Lights"]
+script = ExtResource("7")
+position = Vector2(2420, -5060)
+color = Color(0.9, 1.0, 0.9, 1)
+radius = 520.0
+base_energy = 0.6
+flicker = 0.0
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="nadia" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(0, 0)
+id = "nadia"
+prompt = "Calm the baby (hold E)"
+prompt_offset = Vector2(0, -560)
+reach = 170.0
+
+[node name="roof" type="Node2D" parent="Interactables"]
+script = ExtResource("8")
+position = Vector2(2420, -4500)
+id = "roof"
+prompt = "Open the roof door"
+prompt_offset = Vector2(0, -620)
+reach = 120.0
+
+[node name="Actors" type="Node2D" parent="."]
+
+[node name="Alex" parent="Actors" instance=ExtResource("9")]
+position = Vector2(2470, -1802)
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("10")
+position = Vector2(2470, -2200)
+limit_left = 1500
+limit_right = 4400
+limit_top = -5500
+limit_bottom = 200
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="CinemaUI" type="CanvasLayer" parent="."]
+script = ExtResource("11")

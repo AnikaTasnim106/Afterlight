@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Survivor"
+head_radius = 48.000
+skin = Color(0.700, 0.500, 0.380, 1)
+skin_shade = Color(0.581, 0.390, 0.289, 1)
+hair = Color(0.300, 0.250, 0.220, 1)
+brow = Color(0.300, 0.250, 0.220, 1)
+top = Color(0.450, 0.470, 0.500, 1)
+top_shade = Color(0.360, 0.380, 0.400, 1)
+top_accent = Color(0.700, 0.700, 0.700, 1)
+sleeve = Color(0.450, 0.470, 0.500, 1)
+pants = Color(0.250, 0.270, 0.330, 1)
+hair_style = 4
+top_style = 1

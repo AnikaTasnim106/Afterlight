@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Kai"
+head_radius = 46.000
+torso_len = 104.000
+shoulder_half = 38.000
+hip_half = 32.000
+thigh = 92.000
+shin = 88.000
+skin = Color(0.760, 0.600, 0.450, 1)
+skin_shade = Color(0.631, 0.468, 0.342, 1)
+hair = Color(0.100, 0.090, 0.100, 1)
+brow = Color(0.100, 0.090, 0.100, 1)
+top = Color(0.200, 0.550, 0.400, 1)
+top_shade = Color(0.150, 0.420, 0.300, 1)
+top_accent = Color(0.950, 0.950, 0.950, 1)
+sleeve = Color(0.200, 0.550, 0.400, 1)
+pants = Color(0.150, 0.150, 0.180, 1)
+shoes = Color(0.950, 0.950, 0.950, 1)
+shoe_accent = Color(0.200, 0.550, 0.400, 1)
+hair_style = 0
+top_style = 1
+scarf = true
+scarf_color = Color(0.900, 0.300, 0.350, 1)
+bounce = 1.150

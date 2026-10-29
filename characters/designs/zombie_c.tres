@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Infected"
+head_radius = 50.000
+torso_len = 126.000
+shoulder_half = 48.000
+hip_half = 38.000
+thigh = 110.000
+shin = 104.000
+skin = Color(0.700, 0.720, 0.700, 1)
+skin_shade = Color(0.560, 0.580, 0.570, 1)
+hair = Color(0.100, 0.100, 0.100, 1)
+brow = Color(0.250, 0.250, 0.250, 1)
+top = Color(0.240, 0.260, 0.300, 1)
+top_shade = Color(0.180, 0.200, 0.230, 1)
+top_accent = Color(0.550, 0.250, 0.220, 1)
+inner = Color(0.750, 0.750, 0.750, 1)
+sleeve = Color(0.240, 0.260, 0.300, 1)
+pants = Color(0.200, 0.210, 0.240, 1)
+shoes = Color(0.080, 0.080, 0.080, 1)
+hair_style = 4
+top_style = 2
+blank_eyes = true
+torn = true
+mouth = Color(0.250, 0.150, 0.170, 1)
+walk_speed = 95.000
+run_speed = 220.000

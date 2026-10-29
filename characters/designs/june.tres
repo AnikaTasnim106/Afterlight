@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "June"
+head_radius = 47.0
+neck_len = 8.0
+torso_len = 96.0
+shoulder_half = 36.0
+hip_half = 31.0
+thigh = 84.0
+shin = 80.0
+upper_arm = 66.0
+forearm = 60.0
+hand_radius = 10.5
+arm_radius = 11.5
+leg_radius = 13.0
+shoe_len = 38.0
+shoe_h = 16.0
+hem_drop = 28.0
+hem_flare = 6.0
+skin = Color(0.82, 0.6, 0.46, 1)
+skin_shade = Color(0.69, 0.47, 0.35, 1)
+hair = Color(0.165, 0.11, 0.11, 1)
+top = Color(0.886, 0.64, 0.23, 1)
+top_shade = Color(0.72, 0.5, 0.15, 1)
+top_accent = Color(0.17, 0.7, 0.655, 1)
+inner = Color(0.95, 0.93, 0.88, 1)
+sleeve = Color(0.886, 0.64, 0.23, 1)
+pants = Color(0.23, 0.21, 0.31, 1)
+shoes = Color(0.91, 0.895, 0.86, 1)
+shoe_accent = Color(0.17, 0.7, 0.655, 1)
+brow = Color(0.165, 0.11, 0.11, 1)
+hair_style = 1
+top_style = 1
+brow_width = 0.95
+eye_scale = 1.1
+blush = true
+freckles = true
+headphones = true
+accessory_color = Color(0.17, 0.7, 0.655, 1)
+bounce = 1.15
+walk_speed = 210.0
+run_speed = 440.0

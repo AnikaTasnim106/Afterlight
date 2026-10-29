@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CharacterDesign" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/character_design.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Theo"
+head_radius = 48.000
+torso_len = 120.000
+shoulder_half = 42.000
+hip_half = 34.000
+thigh = 108.000
+shin = 102.000
+skin = Color(0.550, 0.380, 0.280, 1)
+skin_shade = Color(0.457, 0.296, 0.213, 1)
+hair = Color(0.080, 0.060, 0.070, 1)
+brow = Color(0.080, 0.060, 0.070, 1)
+top = Color(0.350, 0.600, 0.620, 1)
+top_shade = Color(0.270, 0.480, 0.500, 1)
+top_accent = Color(0.950, 0.950, 0.950, 1)
+sleeve = Color(0.350, 0.600, 0.620, 1)
+pants = Color(0.350, 0.600, 0.620, 1)
+shoes = Color(0.900, 0.900, 0.900, 1)
+hair_style = 0
+top_style = 3
+bounce = 1.100
